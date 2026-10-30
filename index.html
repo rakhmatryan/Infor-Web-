@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Studi Informatika — Universitas Nahdlatul Ulama Yogyakarta</title>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Editorial CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Enable JS enhancements while ensuring zero-JS fallback
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+<body>
+
+  <!-- 1. Navbar Responsif (Bootstrap 5) -->
+  <nav class="navbar navbar-expand-lg site-nav sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+
+  <img src="img/logounu.png" alt="Logo UNU" width="30" height="30" class="d-inline-block align-text-top">
+  <span>Informatika UNU Jogja</span>
+</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Buka navigasi menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#hero">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tentang">Tentang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kurikulum">Kurikulum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#keunggulan">Laboratorium</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#kontak">Kontak</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="nav-action-btn" href="#kontak">Konsultasi Prodi</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="mainContent">
+
+    <!-- 2. Hero Section -->
+    <header id="hero" class="hero-editorial">
+      <div class="container">
+        <div class="board-container">
+          
+          <!-- Tile 1: Single H1 and Overview -->
+          <div class="tile tile-headline" data-reveal>
+            <div>
+              <h1>Program Studi Informatika</h1>
+              <p class="hero-meta">
+                Pendidikan sarjana sains komputasi di Fakultas Teknologi Informasi, Universitas Nahdlatul Ulama Yogyakarta. Menyiapkan profesional rekayasa perangkat lunak dan kecerdasan buatan terapan.
+              </p>
+            </div>
+            <a href="#kurikulum" class="mobile-hero-btn">
+              <span>Eksplorasi Kurikulum &amp; Lab</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 2: Campus Image -->
+          <div class="tile tile-campus-photo shutter" data-reveal>
+            <img src="img/bgunu.jpeg" width="739" height="415" alt="Gedung Kampus Terpadu UNU Yogyakarta 9 lantai di Ring Road Barat Sleman" fetchpriority="high">
+            <div class="tile-caption-bar">Kampus Terpadu UNU Yogyakarta · Sleman</div>
+          </div>
+
+          <!-- Tile 3: Kegiatan Mahasiswa -->
+          <div class="tile tile-student-photo" data-reveal>
+            <img src="img/profile.jpg" width="4030" height="2006" alt="Aktivitas perkuliahan dan seminar teknologi mahasiswa Informatika UNU Yogyakarta" loading="lazy" decoding="async">
+            <div class="tile-caption-bar">Seminar Teknologi & Workshop Komputasi</div>
+          </div>
+
+          <!-- Tile 4: Statement Unggulan -->
+          <div class="tile-statement-wrapper" data-reveal>
+            <div class="tile tile-statement-dark">
+              <p>Mencetak sarjana komputasi berdaya saing global, berintegritas tinggi, dan relevan dengan industri teknologi masa depan.</p>
+              <div class="statement-sub">Akreditasi Program Studi &amp; Kurikulum Standar KKNI</div>
+            </div>
+            
+            <div class="tile tile-statement-accent">
+              <div>
+                <h3>Kurikulum Berbasis OBE &amp; Proyek Industri Nyata</h3>
+              </div>
+              <a href="#kurikulum" class="hero-cta-btn">
+                <span>Eksplorasi Kurikulum</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- 3. Section Konten 1: Tentang  -->
+    <section id="tentang" class="content-section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title">Komitmen Akademik</h2>
+          <p class="section-summary">
+            Mengintegrasikan keunggulan teknis komputasi modern dengan etika keilmuan dan kepedulian sosial kemasyarakatan.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main-col" data-reveal>
+            <blockquote class="about-lead-quote">
+              "Pendidikan informatika di UNU Yogyakarta dibangun untuk menjembatani akselerasi transformasi digital dengan kearifan peradaban berwawasan inklusif."
+            </blockquote>
+            <p class="about-body-text">
+              Program Studi Informatika Universitas Nahdlatul Ulama Yogyakarta menyelenggarakan pendidikan komputasi berstandar nasional dan global. Mahasiswa dibekali fondasi matematika diskret, arsitektur sistem komputasi, algoritma tingkat lanjut, serta metodologi perancangan perangkat lunak yang kokoh.
+            </p>
+            <p class="about-body-text">
+              Melalui kolaborasi lintas disiplin bersama lembaga riset mitra dan ekosistem industri digital Yogyakarta, kami memastikan setiap mahasiswa memiliki pengalaman hands-on dalam memecahkan persoalan nyata di sektor industri, layanan publik, dan pemberdayaan masyarakat.
+            </p>
+          </div>
+
+          <div class="about-facts-col" data-reveal>
+            <div class="about-fact-item">
+              <div class="about-fact-label">Gelar Lulusan</div>
+              <div class="about-fact-value">Sarjana Komputer (S.Kom)</div>
+              <div class="about-fact-desc">Masa studi normal 8 semester (144 SKS)</div>
+            </div>
+
+            <div class="about-fact-item">
+              <div class="about-fact-label">Lokasi Kampus</div>
+              <div class="about-fact-value">Kampus Terpadu UNU Jogja</div>
+              <div class="about-fact-desc">Jl. Ring Road Barat, Dowangan, Sleman, D.I. Yogyakarta</div>
+            </div>
+
+            <div class="about-fact-item">
+              <div class="about-fact-label">Fokus Pembelajaran</div>
+              <div class="about-fact-value">Praktikum Berbasis Proyek</div>
+              <div class="about-fact-desc">Portofolio aplikatif di tiap semester perkuliahan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Section Konten 2: Kurikulum Interaktif  -->
+    <section id="kurikulum" class="content-section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title">Konsentrasi Keahlian</h2>
+          <p class="section-summary">
+            Pilih jalur spesialisasi akademik untuk meninjau mata kuliah inti, alokasi laboratorium, dan prospek karier profesional.
+          </p>
+        </div>
+
+        <div class="explorer-container" data-reveal>
+          <!-- Track Tabs -->
+          <div class="track-tabs" role="tablist" aria-label="Pilihan Konsentrasi Informatika">
+            <button class="track-tab-btn active" id="tab-se" role="tab" aria-selected="true" aria-controls="panel-track" data-track="se">
+              <span class="track-code">JALUR SPESIALISASI A</span>
+              <span>Rekayasa Perangkat Lunak</span>
+            </button>
+            <button class="track-tab-btn" id="tab-ai" role="tab" aria-selected="false" aria-controls="panel-track" data-track="ai">
+              <span class="track-code">JALUR SPESIALISASI B</span>
+              <span>Kecerdasan Buatan &amp; Data</span>
+            </button>
+            <button class="track-tab-btn" id="tab-sec" role="tab" aria-selected="false" aria-controls="panel-track" data-track="sec">
+              <span class="track-code">JALUR SPESIALISASI C</span>
+              <span>Keamanan Siber &amp; Jaringan</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Panel Content -->
+          <div class="track-content-panel" id="panel-track" role="tabpanel" aria-labelledby="tab-se">
+            <div class="track-overview-col">
+              <h3 class="track-title" id="trackTitle">Rekayasa Perangkat Lunak &amp; Komputasi Awan</h3>
+              <p class="track-desc" id="trackDesc">
+                Fokus pada arsitektur sistem skala besar, pengembangan platform web modern, mikroservis, dan pipeline DevOps terintegrasi.
+              </p>
+              <div class="track-metrics">
+                <div class="track-metric-box">
+                  <div class="track-metric-num" id="trackSks">48 SKS</div>
+                  <div class="track-metric-label">Mata Kuliah Peminatan</div>
+                </div>
+                <div class="track-metric-box">
+                  <div class="track-metric-num" id="trackLab">Lab Software</div>
+                  <div class="track-metric-label">Infrastruktur Utama</div>
+                </div>
+              </div>
+              <p class="track-careers" id="trackCareers">
+                <strong>Prospek Karier:</strong> Full-Stack Software Engineer, Cloud Architect, Mobile System Developer, DevOps Specialist.
+              </p>
+            </div>
+
+            <div class="track-details-col">
+              <h4 class="track-group-title">MATA KULIAH INTI SPESIALISASI</h4>
+              <ul class="track-course-list" id="trackCourses">
+                <li class="track-course-item">
+                  <span class="track-course-name">Arsitektur Perangkat Lunak &amp; Pola Desain</span>
+                  <span class="track-course-sks">3 SKS · Teori &amp; Praktik</span>
+                </li>
+                <li class="track-course-item">
+                  <span class="track-course-name">Rekayasa Aplikasi Web Skala Industri</span>
+                  <span class="track-course-sks">4 SKS · Studio Coding</span>
+                </li>
+                <li class="track-course-item">
+                  <span class="track-course-name">Sistem Terdistribusi &amp; Cloud Native</span>
+                  <span class="track-course-sks">3 SKS · Hands-on Cluster</span>
+                </li>
+                <li class="track-course-item">
+                  <span class="track-course-name">Penjaminan Mutu &amp; Pengujian Otomatis</span>
+                  <span class="track-course-sks">3 SKS · CI/CD Testbed</span>
+                </li>
+              </ul>
+              <h4 class="track-group-title">LABORATORIUM RUJUKAN</h4>
+              <p class="mb-0 text-subtle" id="trackLabDetail">
+                Dilengkapi workstation modern dengan lingkungan kontainer Docker, Gitlab Runner internal, dan akses server cloud komputasi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Section Konten 3: Keunggulan & Fasilitas Lab (Responsive Card/Grid: 1 col mobile, 2 col tablet, 3 col desktop) -->
+    <section id="keunggulan" class="content-section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title">Laboratorium Riset</h2>
+          <p class="section-summary">
+            Ruang riset dan praktikum modern dirancang untuk mendukung eksplorasi sains data, perancangan sistem, dan keamanan siber.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1: Mobile 1 col (col-12), Tablet 2 col (col-md-6), Desktop 3 col (col-lg-4) -->
+          <div class="col-12 col-md-6 col-lg-4" data-reveal>
+            <article class="lab-card">
+              <div class="lab-media-wrap">
+                <img src="img/computer-lab-at-the-university-of-plymouth.jpg" width="1920" height="1440" alt="Laboratorium Rekayasa Perangkat Lunak dan Cloud Computing" loading="lazy" decoding="async">
+              </div>
+              <div class="lab-content">
+                <h3 class="lab-card-title">Lab Software &amp; Cloud</h3>
+                <p class="lab-card-text">
+                  Didedikasikan untuk pengembangan perangkat lunak berskala besar, pemrograman web, sistem basis data terdistribusi, dan automasi deployment.
+                </p>
+                <ul class="lab-spec-list">
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> 40 Workstation Terhubung Jaringan Berkecepatan Tinggi</li>
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Lingkungan Pengembangan Docker &amp; Linux Native</li>
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Server Uji Otomatis &amp; Version Control System</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Mobile 1 col, Tablet 2 col, Desktop 3 col (Holds real moving video loop) -->
+          <div class="col-12 col-md-6 col-lg-4" data-reveal>
+            <article class="lab-card">
+              <div class="lab-media-wrap">
+                <video autoplay muted loop playsinline preload="metadata" poster="img/openvibe-aquisition-server-hello-world-poster.jpg" width="1280" height="720" aria-label="Visualisasi pemrosesan data real-time pada laboratorium kecerdasan buatan">
+                  <source src="img/openvibe-aquisition-server-hello-world.webm" type="video/webm">
+                </video>
+              </div>
+              <div class="lab-content">
+                <h3 class="lab-card-title">Lab Kecerdasan Buatan &amp; Data</h3>
+                <p class="lab-card-text">
+                  Fasilitas komputasi kinerja tinggi untuk pemrosesan sinyal digital, machine learning, visualisasi analitik data, dan pemodelan prediktif.
+                </p>
+                <ul class="lab-spec-list">
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Node GPU Komputasi untuk Training Model Deep Learning</li>
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Pipeline Pengolahan Big Data &amp; Natural Language</li>
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Dukungan Framework AI Open-Source Standar Industri</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Mobile 1 col, Tablet 2 col, Desktop 3 col -->
+          <div class="col-12 col-md-6 col-lg-4" data-reveal>
+            <article class="lab-card">
+              <div class="lab-media-wrap">
+                <img src="img/computer-lab-leonhard.jpg" width="1920" height="1280" alt="Laboratorium Keamanan Siber dan Infrastruktur Jaringan Komputer" loading="lazy" decoding="async">
+              </div>
+              <div class="lab-content">
+                <h3 class="lab-card-title">Lab Cyber Defense &amp; Jaringan</h3>
+                <p class="lab-card-text">
+                  Lingkungan uji terisolasi untuk simulasi pertahanan siber, audit kerentanan sistem, kriptografi terapan, dan konfigurasi protokol routing.
+                </p>
+                <ul class="lab-spec-list">
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Perangkat Keras Cisco Router &amp; Switch Terkelola</li>
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Sandbox Lingkungan Simulasi Penetration Testing</li>
+                  <li class="lab-spec-item"><span class="lab-spec-bullet">&bull;</span> Alat Analisis Paket Data &amp; Forensik Digital</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Section Konten 4: Statistik & Rekam Jejak (Figure Tiles Mosaic Blueprint) -->
+    <section id="statistik" class="content-section pt-0">
+      <div class="container">
+        <div class="mosaic-stats" data-reveal>
+          <div class="mosaic-photo-cell">
+            <img src="img/yogyakarta-indonesia-tugu-yogyakarta-02.jpg" width="1920" height="1141" alt="Monumen Tugu Yogyakarta, penanda kota budaya dan pusat pendidikan di Yogyakarta" loading="lazy" decoding="async">
+            <div class="tile-caption-bar">Yogyakarta · Pusat Kebudayaan &amp; Pendidikan Tinggi Indonesia</div>
+          </div>
+          <div class="mosaic-tiles-cell">
+            <div class="stat-tile-accent">
+              <div class="stat-number">144 SKS</div>
+              <p class="stat-desc">Kurikulum Terstruktur Standar OBE Siap Relevan Industri Global</p>
+            </div>
+            <div class="stat-tile-dark">
+              <div class="stat-number">100%</div>
+              <p class="stat-desc">Mata Kuliah Keahlian Didukung Praktikum Laboratorium &amp; Portofolio Nyata</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Section Konten 5: Kontak & Pendaftaran (Clip-out Coupon Blueprint) -->
+    <section id="kontak" class="content-section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title">Konsultasi Akademik</h2>
+          <p class="section-summary">
+            Sampaikan pertanyaan Anda mengenai kurikulum, program beasiswa, atau pendaftaran mahasiswa baru di Program Studi Informatika UNU Yogyakarta.
+          </p>
+        </div>
+
+        <div class="contact-coupon" data-reveal>
+          <!-- Left Column: Information & Physical Address -->
+          <div class="coupon-info-side">
+            <div>
+              <h3>Sekretariat Program Studi</h3>
+              <p>
+                Layanan akademik beroperasi setiap hari kerja Senin hingga Jumat pukul 08.00–16.00 WIB di gedung Kampus Terpadu UNU Yogyakarta.
+              </p>
+              
+              <div class="contact-address-block">
+                <div class="contact-address-title">ALAMAT KAMPUS TERPADU</div>
+                <p class="contact-address-text">
+                  Fakultas Teknologi Informasi<br>
+                  Universitas Nahdlatul Ulama Yogyakarta<br>
+                  Jl. Ring Road Barat, Dowangan, Banyuraden, Kec. Gamping, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55293
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <div class="contact-address-title">KONTAK RESMI</div>
+              <p class="contact-address-text">
+                Email: informatika@unu-jogja.ac.id<br>
+                Telepon: (0274) 4399-888
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Semantic Responsive Form -->
+          <div class="coupon-form-side">
+            <form id="contactForm" novalidate>
+              <div class="form-group-custom">
+                <label for="nama" class="form-label-custom">Nama Lengkap</label>
+                <input type="text" class="form-control-custom" id="nama" name="nama" placeholder="Tuliskan nama lengkap Anda" required>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="email" class="form-label-custom">Alamat Email</label>
+                <input type="email" class="form-control-custom" id="email" name="email" placeholder="contoh: calon.mahasiswa@domain.com" required>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="minatTrack" class="form-label-custom">Peminatan Studi yang Diminati</label>
+                <select class="form-select-custom" id="minatTrack" name="minatTrack" required>
+                  <option value="" disabled selected>Pilih salah satu konsentrasi keahlian</option>
+                  <option value="se">Rekayasa Perangkat Lunak &amp; Komputasi Awan</option>
+                  <option value="ai">Kecerdasan Buatan &amp; Sains Data</option>
+                  <option value="sec">Keamanan Siber &amp; Infrastruktur Jaringan</option>
+                  <option value="umum">Informasi Umum Perkuliahan &amp; Beasiswa</option>
+                </select>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="pesan" class="form-label-custom">Pesan atau Pertanyaan</label>
+                <textarea class="form-control-custom" id="pesan" name="pesan" rows="4" placeholder="Tuliskan rincian pertanyaan Anda mengenai program studi atau pendaftaran..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-editorial" id="submitBtn">
+                <span>Kirim Pertanyaan</span>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+
+              <div class="form-feedback-alert" id="formAlert" role="alert" aria-live="polite">
+                <strong>Pesan Berhasil Terkirim:</strong> Terima kasih telah menghubungi Program Studi Informatika UNU Yogyakarta. Tim staf akademik akan merespons pesan Anda via email.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 8. Footer Responsif -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="footer-brand-name">Informatika UNU Yogyakarta</div>
+          <p class="footer-brand-desc">
+            Bagian dari Fakultas Teknologi Informasi, Universitas Nahdlatul Ulama Yogyakarta. Berkomitmen mengembangkan talenta digital unggul yang memadukan keahlian sains komputasi mutakhir dengan nilai keislaman dan peradaban.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <div class="footer-col-title">NAVIGASI HALAMAN</div>
+          <ul class="footer-link-list">
+            <li><a href="#hero">Beranda Program Studi</a></li>
+            <li><a href="#tentang">Visi &amp; Komitmen Akademik</a></li>
+            <li><a href="#kurikulum">Konsentrasi &amp; Kurikulum</a></li>
+            <li><a href="#keunggulan">Fasilitas Laboratorium</a></li>
+            <li><a href="#kontak">Layanan Informasi &amp; Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-credits-col">
+          <div class="footer-col-title">KREDIT MEDIA TERBUKA</div>
+          <div class="footer-credits-text">
+            Foto Tugu Yogyakarta oleh CEphoto/Uwe Aranas (CC BY-SA 3.0 via Commons); Foto Lab Plymouth oleh Encoded (CC BY-SA 4.0); Foto Lab Leonhard oleh Wertz/PennState (CC BY-SA 4.0); Video OpenViBE oleh Brylie Oxley (CC BY 3.0). Dokumentasi kampus milik UNU Jogja.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Program Studi Informatika UNU Yogyakarta. Seluruh hak cipta dilindungi.
+        </div>
+        <div>
+          Tugas Pemrograman Web Pertemuan 4. Disusun oleh Rakhmat Triantoro (NIM 251111039)
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Interactive Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1136 @@
+
+/* 1. Design Tokens */
+:root {
+  /* Color Palette - Soot & Lime */
+  --bg-page: #0a0c10;
+  --bg-surface: #12161f;
+  --bg-surface-2: #1a202c;
+  --bg-surface-elevated: #242c3d;
+  --ink-primary: #ffffff;
+  --ink-secondary: #cbd5e1;
+  --ink-muted: #94a3b8;
+  --accent-lime: #dafa9c;
+  --accent-lime-hover: #c6ea82;
+  --accent-ink: #0a0c10;
+
+  /* Strict 5-Step Typography Scale */
+  --font-sans: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --step-hero: clamp(2.5rem, 2rem + 3vw, 4.25rem);
+  --step-h2: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+  --step-h3: 1.375rem;
+  --step-lead: 1.125rem;
+  --step-body: 1rem;
+  --step-small: 0.875rem;
+
+  /* Spacing */
+  --section-gap: clamp(80px, 8vw, 140px);
+  --grid-gap: clamp(16px, 2vw, 24px);
+
+  /* Motion Timing & Easings */
+  --t-press: 120ms;
+  --t-hover: 180ms;
+  --t-ui: 320ms;
+  --t-reveal: 700ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* 2. Base Resets & Global Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Constraints */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--step-hero);
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: var(--step-h2);
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: var(--step-h3);
+}
+
+h4 {
+  font-size: var(--step-small);
+  letter-spacing: 0.04em;
+}
+
+p {
+  color: var(--ink-primary);
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  max-width: 65ch;
+}
+
+p.lead-text {
+  font-size: var(--step-lead);
+  line-height: 1.5;
+  color: var(--ink-primary);
+  font-weight: 400;
+  max-width: 65ch;
+}
+
+.text-subtle {
+  color: var(--ink-secondary);
+}
+
+.text-accent {
+  color: var(--accent-lime);
+}
+
+/* 3. Section Rhythm */
+.content-section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  position: relative;
+}
+
+.section-head {
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
+.section-title {
+  margin-bottom: 0.75rem;
+}
+
+.section-summary {
+  max-width: 60ch;
+  font-size: var(--step-lead);
+  color: var(--ink-secondary);
+  margin-bottom: 0;
+}
+
+/* 4. Navbar */
+.site-nav {
+  background-color: var(--bg-page);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.site-nav .navbar-brand {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--step-body);
+  letter-spacing: -0.01em;
+  color: var(--ink-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-nav .navbar-brand-badge {
+  display: inline-block;
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+  font-size: var(--step-small);
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+.site-nav .nav-link {
+  color: var(--ink-secondary);
+  font-size: var(--step-body);
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: color var(--t-hover) ease;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .nav-link.active {
+  color: var(--ink-primary);
+}
+
+.site-nav .nav-action-btn {
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: var(--step-small);
+  padding: 0.55rem 1.15rem;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
+}
+
+.site-nav .nav-action-btn:hover {
+  background-color: var(--accent-lime-hover);
+  color: var(--accent-ink);
+}
+
+.site-nav .nav-action-btn:active {
+  transform: scale(0.97);
+}
+
+.navbar-toggler {
+  background-color: var(--bg-surface-2);
+  border: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar-toggler:focus {
+  outline: 2px solid var(--accent-lime);
+}
+
+/* 5. Hero: Editorial Two-by-Two Board */
+.hero-editorial {
+  padding-top: clamp(24px, 3vw, 40px);
+  padding-bottom: clamp(48px, 6vw, 80px);
+  background-color: var(--bg-page);
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-surface);
+}
+
+/* Hero Tile 1: Massive Headline */
+.tile-headline {
+  grid-column: span 7;
+  padding: clamp(28px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.tile-headline h1 {
+  margin: 0;
+  font-size: var(--step-hero);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--ink-primary);
+}
+
+.tile-headline .hero-meta {
+  margin-top: 1.5rem;
+  font-size: var(--step-lead);
+  color: var(--ink-secondary);
+  max-width: 50ch;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.mobile-hero-btn {
+  display: none;
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: var(--step-body);
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+/* Hero Tile 2: Campus Shutter Image */
+.tile-campus-photo {
+  grid-column: span 5;
+  min-height: 380px;
+  background-color: var(--bg-surface-2);
+}
+
+.tile-campus-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tile-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 16px;
+  background-color: rgba(10, 12, 16, 0.9);
+  font-size: var(--step-small);
+  color: var(--ink-primary);
+}
+
+/* Hero Tile 3: Student & Community Photo */
+.tile-student-photo {
+  grid-column: span 5;
+  min-height: 300px;
+  background-color: var(--bg-surface-2);
+}
+
+.tile-student-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero Tile 4: Accent & Statement Dual Tiles */
+.tile-statement-wrapper {
+  grid-column: span 7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tile-statement-dark {
+  background-color: var(--bg-surface);
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile-statement-dark p {
+  font-size: var(--step-lead);
+  line-height: 1.45;
+  color: var(--ink-primary);
+  margin: 0;
+}
+
+.tile-statement-dark .statement-sub {
+  font-size: var(--step-small);
+  color: var(--ink-muted);
+  margin-top: 1rem;
+}
+
+.tile-statement-accent {
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile-statement-accent h3 {
+  color: var(--accent-ink);
+  font-size: var(--step-h3);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.tile-statement-accent .hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--accent-ink);
+  color: var(--accent-lime);
+  font-weight: 700;
+  font-size: var(--step-body);
+  text-decoration: none;
+  border: none;
+  margin-top: 1.5rem;
+  transition: background-color var(--t-hover) ease, color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
+}
+
+.tile-statement-accent .hero-cta-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.tile-statement-accent .hero-cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* 6. Section 1: Tentang (Academic Vision & Editorial Layout) */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+.about-main-col {
+  grid-column: span 8;
+}
+
+.about-lead-quote {
+  font-size: var(--step-lead);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--ink-primary);
+  margin-bottom: 2rem;
+  background-color: var(--bg-surface);
+  padding: clamp(20px, 3vw, 32px);
+  max-width: 65ch;
+}
+
+.about-body-text {
+  font-size: var(--step-body);
+  line-height: 1.7;
+  color: var(--ink-primary);
+  margin-bottom: 1.5rem;
+  max-width: 65ch;
+}
+
+.about-facts-col {
+  grid-column: span 4;
+  background-color: var(--bg-surface);
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.about-fact-item {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-fact-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.about-fact-label {
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--accent-lime);
+  margin-bottom: 0.25rem;
+}
+
+.about-fact-value {
+  font-size: var(--step-h3);
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin: 0;
+}
+
+.about-fact-desc {
+  font-size: var(--step-small);
+  color: var(--ink-secondary);
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+}
+
+/* 7. Section 2: Interactive Curriculum & Concentration Explorer ("One Live Thing") */
+.explorer-container {
+  background-color: var(--bg-surface);
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.track-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.track-tab-btn {
+  background-color: var(--bg-surface-2);
+  color: var(--ink-secondary);
+  border: none;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: background-color var(--t-hover) ease, color var(--t-hover) ease;
+}
+
+.track-tab-btn .track-code {
+  font-size: var(--step-small);
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.track-tab-btn:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--ink-primary);
+}
+
+.track-tab-btn.active {
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+}
+
+.track-tab-btn.active .track-code {
+  color: rgba(10, 12, 16, 0.85);
+}
+
+.track-content-panel {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+.track-overview-col {
+  grid-column: span 5;
+}
+
+.track-title {
+  font-size: var(--step-h3);
+  margin-bottom: 0.75rem;
+}
+
+.track-desc {
+  font-size: var(--step-body);
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.track-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.track-metric-box {
+  background-color: var(--bg-surface-2);
+  padding: 1rem;
+}
+
+.track-metric-num {
+  font-size: var(--step-h2);
+  font-weight: 700;
+  color: var(--accent-lime);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.track-metric-label {
+  font-size: var(--step-small);
+  color: var(--ink-secondary);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
+
+.track-details-col {
+  grid-column: span 7;
+  background-color: var(--bg-surface-2);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.track-group-title {
+  font-size: var(--step-small);
+  font-weight: 700;
+  color: var(--accent-lime);
+  margin-bottom: 0.75rem;
+}
+
+.track-course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+}
+
+.track-course-item {
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.track-course-name {
+  font-size: var(--step-body);
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.track-course-sks {
+  font-size: var(--step-small);
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+.track-careers {
+  font-size: var(--step-small);
+  color: var(--ink-primary);
+  margin: 0;
+}
+
+/* 8. Section 3: Laboratorium Unggulan (Responsive 3-Column Grid) */
+.lab-card {
+  background-color: var(--bg-surface);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lab-media-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-surface-2);
+}
+
+.lab-media-wrap img,
+.lab-media-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lab-content {
+  padding: clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.lab-card-title {
+  font-size: var(--step-h3);
+  margin-bottom: 0.75rem;
+  color: var(--ink-primary);
+}
+
+.lab-card-text {
+  font-size: var(--step-body);
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.lab-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.lab-spec-item {
+  font-size: var(--step-small);
+  color: var(--ink-primary);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lab-spec-bullet {
+  color: var(--accent-lime);
+  font-weight: 700;
+}
+
+/* 9. Section 4: Statistik & Rekam Jejak (Figure Tiles Mosaic) */
+.mosaic-stats {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: var(--bg-surface);
+  overflow: hidden;
+}
+
+.mosaic-photo-cell {
+  grid-column: span 7;
+  position: relative;
+  min-height: 380px;
+}
+
+.mosaic-photo-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mosaic-tiles-cell {
+  grid-column: span 5;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.stat-tile-accent {
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+  padding: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-tile-accent .stat-number {
+  font-size: var(--step-hero);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--accent-ink);
+  margin: 0 0 0.5rem 0;
+}
+
+.stat-tile-accent .stat-desc {
+  font-size: var(--step-body);
+  font-weight: 600;
+  color: var(--accent-ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.stat-tile-dark {
+  background-color: var(--bg-surface-2);
+  color: var(--ink-primary);
+  padding: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-tile-dark .stat-number {
+  font-size: var(--step-hero);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--accent-lime);
+  margin: 0 0 0.5rem 0;
+}
+
+.stat-tile-dark .stat-desc {
+  font-size: var(--step-body);
+  color: var(--ink-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 10. Section 5: Formulir Kontak & Pendaftaran (Coupon Blueprint) */
+.contact-coupon {
+  background-color: var(--bg-surface);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+}
+
+.coupon-info-side {
+  grid-column: span 5;
+  padding: clamp(32px, 4vw, 56px);
+  background-color: var(--bg-surface-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coupon-info-side h3 {
+  font-size: var(--step-h3);
+  margin-bottom: 1rem;
+}
+
+.coupon-info-side p {
+  color: var(--ink-secondary);
+  font-size: var(--step-body);
+  line-height: 1.6;
+}
+
+.contact-address-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.contact-address-title {
+  font-size: var(--step-small);
+  font-weight: 700;
+  color: var(--accent-lime);
+  margin-bottom: 0.5rem;
+}
+
+.contact-address-text {
+  font-size: var(--step-body);
+  color: var(--ink-primary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.coupon-form-side {
+  grid-column: span 7;
+  padding: clamp(32px, 4vw, 56px);
+}
+
+.form-group-custom {
+  margin-bottom: 1.25rem;
+}
+
+.form-label-custom {
+  display: block;
+  font-size: var(--step-small);
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 0.4rem;
+}
+
+/* Real form inputs retain clean focused boundaries */
+input.form-control-custom,
+select.form-select-custom,
+textarea.form-control-custom {
+  width: 100%;
+  background-color: var(--bg-surface-2);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  padding: 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0;
+  transition: background-color var(--t-hover) ease, border-color var(--t-hover) ease;
+}
+
+input.form-control-custom:focus,
+select.form-select-custom:focus,
+textarea.form-control-custom:focus {
+  outline: none;
+  background-color: var(--bg-surface-elevated);
+  border-color: var(--accent-lime);
+}
+
+input.form-control-custom::placeholder,
+textarea.form-control-custom::placeholder {
+  color: var(--ink-muted);
+}
+
+.btn-submit-editorial {
+  width: 100%;
+  background-color: var(--accent-lime);
+  color: var(--accent-ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
+}
+
+.btn-submit-editorial:hover {
+  background-color: var(--accent-lime-hover);
+}
+
+.btn-submit-editorial:active {
+  transform: scale(0.98);
+}
+
+.form-feedback-alert {
+  display: none;
+  background-color: var(--bg-surface-2);
+  border-left: 3px solid var(--accent-lime);
+  padding: 1rem;
+  margin-top: 1.25rem;
+  font-size: var(--step-body);
+  color: var(--ink-primary);
+}
+
+/* 11. Footer */
+.site-footer {
+  background-color: var(--bg-page);
+  padding-top: clamp(48px, 6vw, 80px);
+  padding-bottom: 40px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+  padding-bottom: clamp(32px, 4vw, 56px);
+}
+
+.footer-brand-col {
+  grid-column: span 6;
+}
+
+.footer-brand-name {
+  font-size: var(--step-h3);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand-desc {
+  font-size: var(--step-body);
+  color: var(--ink-secondary);
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+.footer-links-col {
+  grid-column: span 3;
+}
+
+.footer-col-title {
+  font-size: var(--step-small);
+  font-weight: 700;
+  color: var(--accent-lime);
+  margin-bottom: 1rem;
+}
+
+.footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link-list a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-size: var(--step-small);
+  transition: color var(--t-hover) ease;
+}
+
+.footer-link-list a:hover {
+  color: var(--ink-primary);
+}
+
+.footer-credits-col {
+  grid-column: span 3;
+}
+
+.footer-credits-text {
+  font-size: var(--step-small);
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.footer-credits-text a {
+  color: var(--ink-secondary);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--step-small);
+  color: var(--ink-muted);
+}
+
+/* 12. Motion Layer & Reveals */
+.shutter {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .shutter {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1100ms var(--ease-in-out);
+  }
+  .js .shutter img {
+    transform: scale(1.12);
+    transition: transform 1500ms var(--ease-soft);
+  }
+  .js .shutter.is-in {
+    clip-path: inset(0);
+  }
+  .js .shutter.is-in img {
+    transform: none;
+  }
+
+  /* Staggered scroll entrance */
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--t-reveal) var(--ease-expo), transform var(--t-reveal) var(--ease-expo);
+  }
+
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Quick button tap feedback */
+  button, .btn, .nav-action-btn, .hero-cta-btn, .btn-submit-editorial {
+    transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;
+  }
+}
+
+/* 13. Responsive Media Queries */
+@media (max-width: 991.98px) {
+  /* Tablet breakpoint */
+  .board-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tile-headline {
+    grid-column: span 2;
+    min-height: auto;
+  }
+
+  .tile-campus-photo {
+    grid-column: span 1;
+    min-height: 280px;
+  }
+
+  .tile-student-photo {
+    grid-column: span 1;
+    min-height: 280px;
+  }
+
+  .tile-statement-wrapper {
+    grid-column: span 2;
+  }
+
+  .about-main-col {
+    grid-column: span 12;
+    margin-bottom: 2rem;
+  }
+
+  .about-facts-col {
+    grid-column: span 12;
+  }
+
+  .track-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .track-overview-col {
+    grid-column: span 12;
+    margin-bottom: 1.5rem;
+  }
+
+  .track-details-col {
+    grid-column: span 12;
+  }
+
+  .mosaic-photo-cell {
+    grid-column: span 12;
+    min-height: 300px;
+  }
+
+  .mosaic-tiles-cell {
+    grid-column: span 12;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .contact-coupon {
+    grid-template-columns: 1fr;
+  }
+
+  .coupon-info-side {
+    grid-column: span 1;
+  }
+
+  .coupon-form-side {
+    grid-column: span 1;
+  }
+
+  .footer-brand-col {
+    grid-column: span 12;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links-col {
+    grid-column: span 6;
+  }
+
+  .footer-credits-col {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Mobile breakpoint */
+  :root {
+    --section-gap: 56px;
+  }
+
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .board-container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .tile-headline {
+    grid-column: span 1;
+    padding: 24px 20px;
+  }
+
+  .mobile-hero-btn {
+    display: block;
+  }
+
+  .tile-campus-photo {
+    grid-column: span 1;
+    min-height: 240px;
+  }
+
+  .tile-student-photo {
+    grid-column: span 1;
+    min-height: 220px;
+  }
+
+  .tile-statement-wrapper {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mosaic-tiles-cell {
+    grid-template-columns: 1fr;
+  }
+
+  .track-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links-col,
+  .footer-credits-col {
+    grid-column: span 12;
+  }
+}
